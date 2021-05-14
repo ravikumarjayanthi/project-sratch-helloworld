@@ -8,3 +8,7 @@
       yum:
         name: java
         state: present
+    - name: downloading the wget package
+      get_url: 
+        url: https://downloads.apache.org/tomcat/tomcat-9/v9.0.46/bin/apache-tomcat-9.0.46.zip
+        dest: /home/ec2-user/
