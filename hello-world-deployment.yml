@@ -3,7 +3,8 @@
   hosts: myclients
   tasks: 
     - name: This task will install Java on your hosts
-      yum:
-        name: OpenJDK
-        state: present
+      become: yes
       become_user: root
+      yum:
+        name: java
+        state: present
