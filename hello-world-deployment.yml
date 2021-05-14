@@ -1,0 +1,8 @@
+---
+- name: This playbook will iinstall tomcat and java and deploy the hello-world application
+  hosts: myclients
+  tasks: 
+    - name: This task will install Java on your hosts
+      yum:
+        name: OpenJDK
+        state: present
