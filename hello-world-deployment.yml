@@ -12,3 +12,15 @@
       get_url: 
         url: https://downloads.apache.org/tomcat/tomcat-9/v9.0.46/bin/apache-tomcat-9.0.46.tar.gz
         dest: /home/ec2-user/
+    - name: Extracting/untaring the apache-tomcat file
+      unarchive:
+        src: /home/ec2-user/apache-tomcat-9.0.46.tar.gz
+        dest: /opt/
+    - name: Renaming the apache-tomcat-9.0.46 to tomcat
+      command: mv /opt/apache-tomcat-9.0.46 /opt/tomcat
+    - name: Deploying the war file from host system to remote system tomcat webapps folder
+      copy:
+        src: /home/ec2-user/workspace/proj-scratch/target/SpringBootMavenExample-1.3.5.RELEASE.war
+        dest: /opt/tomcat/webapps/
+    - name: Starting the tomcat
+      command: sh /opt/tomcat/bin/startup.sh
