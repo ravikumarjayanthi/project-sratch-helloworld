@@ -25,4 +25,4 @@
     - name: Starting the tomcat
       shell: source /home/ec2-user/.bashrc
     - name: Starting the tomcat
-      command: sh /opt/tomcat/bin/startup.sh      
+      shell: sh /opt/tomcat/bin/startup.sh      
