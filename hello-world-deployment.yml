@@ -23,4 +23,6 @@
         src: /home/ec2-user/workspace/proj-scratch/target/SpringBootMavenExample-1.3.5.RELEASE.war
         dest: /opt/tomcat/webapps/
     - name: Starting the tomcat
-      command: source /home/ec2-user/.bashrc; sh /opt/tomcat/bin/startup.sh
+      command: source /home/ec2-user/.bashrc
+    - name: Starting the tomcat
+      command: sh /opt/tomcat/bin/startup.sh      
